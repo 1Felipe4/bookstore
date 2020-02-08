@@ -19,7 +19,7 @@ function generate(){
 
 
 
-    section.style.backgroundColor = "burlywood";
+    section.style.backgroundColor = "tan";
     bookCover = book.getAttribute("cover");
     if(bookCover == null){
       bookCover = "";
@@ -150,38 +150,45 @@ for (var i = 0; i < selected.length; i++) {
   table.style.border = "3px solid gray";
   var hRow = document.createElement("tr");
   var bookHead = document.createElement("th");
-  bookHead.style.width="33%";
   bookHead.innerText ="Book";
   bookHead.style.border = "1px solid lightgray";
 
 
   hRow.appendChild(bookHead);
 
-  var costHead = document.createElement("th");
-  costHead.innerText = "Cost";
-  costHead.style.border = "1px solid lightgray";
-  hRow.appendChild(costHead);
+
 
   var amountHead = document.createElement("th");
   amountHead.innerText = "Amount";
   amountHead.style.border = "1px solid lightgray";
+
+  var costHead = document.createElement("th");
+  costHead.innerText = "Cost";
+  costHead.style.border = "1px solid lightgray";
+  hRow.appendChild(costHead);
 
   hRow.appendChild(amountHead);
   table.appendChild(hRow);
 
   if(selected.length == 0){
     var noneRow = document.createElement("tr");
+
     var noneData = document.createElement("td");
-    var noneSum = document.createElement("td");
-    var noneAmount = document.createElement("td");
     noneData.innerText ="None";
-    noneSum.innerText = "$0.00";
+    noneRow.appendChild(noneData);
+
+
+
+    var noneAmount = document.createElement("td");
     noneAmount.innerText = "0"
     noneAmount.style.border = "2px solid lightgray";
-
-    noneRow.appendChild(noneData);
-    noneRow.appendChild(noneSum);
+    noneAmount.style.textAlign = "center";
     noneRow.appendChild(noneAmount);
+
+    var noneSum = document.createElement("td");
+    noneSum.innerText = "$0.00";
+    noneRow.appendChild(noneSum);
+
     table.appendChild(noneRow);
   }
 
@@ -195,17 +202,21 @@ for (var i = 0; i < selected.length; i++) {
     bookName.innerText = "" +node.getAttribute("name");
     row.appendChild(bookName);
 
-    var bookPrice = document.createElement("td");
-    bookPrice.innerText = "$" + node.innerText;
-    row.appendChild(bookPrice);
 
-    sumBooks+= parseInt(selInput.value);
-    sum+= parseFloat(node.innerText) * selInput.value;
 
     var bookAmount = document.createElement("td");
     bookAmount.innerText = selInput.value;
     bookAmount.style.border = "2px solid lightgray";
+    bookAmount.style.textAlign = "center";
     row.appendChild(bookAmount);
+
+
+    var bookPrice = document.createElement("td");
+    bookPrice.innerText = "$" + parseFloat(node.innerText*selInput.value).toFixed(2);
+    row.appendChild(bookPrice);
+
+    sumBooks+= parseInt(selInput.value);
+    sum+= parseFloat(node.innerText) * selInput.value;
     table.appendChild(row);
   }
 
@@ -216,14 +227,17 @@ for (var i = 0; i < selected.length; i++) {
   total.innerText = "Total";
   row.appendChild(total);
 
-  var totalTxt = document.createElement("td");
-  totalTxt.innerText = "$" + sum.toFixed(2);
-  row.appendChild(totalTxt);
+
 
   var amount = document.createElement("td");
   console.log(sumBooks);
   amount.innerText = sumBooks;
+  amount.style.textAlign = "center";
   row.appendChild(amount);
+
+  var totalTxt = document.createElement("td");
+  totalTxt.innerText = "$" + sum.toFixed(2);
+  row.appendChild(totalTxt);
 
   table.appendChild(row);
   section = document.getElementById("calculate");
