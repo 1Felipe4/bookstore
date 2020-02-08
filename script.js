@@ -19,7 +19,7 @@ function generate(){
 
 
 
-    section.style.backgroundColor = "#F9E4B7";
+    section.style.backgroundColor = "burlywood";
     bookCover = book.getAttribute("cover");
     if(bookCover == null){
       bookCover = "";
