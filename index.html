@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>XML Practice</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <xml id="xmlDoc">
+      <bookstore>
+        <book category="Memoir" >
+          <title lang="en">Anna Banana</title>
+          <author>Anna Jhagroo</author>
+          <year>2020</year>
+          <price>3000.00</price>
+        </book>
+      <book category="cooking">
+        <title lang="en">Everyday Italian</title>
+        <author>Giada De Laurentiis</author>
+        <year>2005</year>
+        <price>30.00</price>
+      </book>
+
+      <book category="children">
+        <title lang="en">Harry Potter</title>
+        <author>J K. Rowling</author>
+        <year>2005</year>
+        <price>29.99</price>
+      </book>
+
+      <book category="web">
+        <title lang="en">XQuery Kick Start</title>
+        <author>James McGovern</author>
+        <author>Per Bothner</author>
+        <author>Kurt Cagle</author>
+        <author>James Linn</author>
+        <author>Vaidyanathan Nagarajan</author>
+        <year>2003</year>
+        <price>49.99</price>
+      </book>
+
+      <book category="web" cover="paperback">
+        <title lang="en">Learning XML</title>
+        <author>Erik T. Ray</author>
+        <year>2003</year>
+        <price>39.95</price>
+      </book>
+
+      </bookstore>
+    </xml>
+
+
+    <main  id="content">
+
+
+    </main>
+
+    <aside >
+
+      <h2>Phill's Book Store</h2>
+      
+      <section id="calculate">
+
+      </section>
+      <section>
+          <button type="button" name="button" onclick="generateAside()"> Calculate</button>
+      </section>
+
+    </aside>
+
+    <script src="script.js" charset="utf-8" onload="generate()"> </script>
+  </body>
+</html>

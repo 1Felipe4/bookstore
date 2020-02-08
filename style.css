@@ -1,0 +1,38 @@
+
+body{
+  background-image: url(webBG.jpg);
+  background-size: contain;
+}
+main{
+  float: left;
+  width: 60%;
+}
+
+aside{
+  position: fixed;
+  left: 80%;
+  width: 18%;
+
+}
+
+aside *{
+
+  padding: 0;
+  margin-top: 5%;
+  width: 100%;
+  background-color: whitesmoke;
+
+}
+
+aside h2{
+  width: 98%;
+  border: 2px solid lightgray;
+}
+
+aside button{
+  margin-top: 0;
+}
+
+xml{
+  display: none;
+}
