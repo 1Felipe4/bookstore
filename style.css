@@ -10,8 +10,8 @@ main{
 
 aside{
   position: fixed;
-  left: 80%;
-  width: 18%;
+  left: 70%;
+  width: 25%;
 
 }
 
@@ -20,8 +20,12 @@ aside *{
   padding: 0;
   margin-top: 5%;
   width: 100%;
-  background-color: whitesmoke;
+  background-color: #F9E4B7;
 
+}
+
+aside table *{
+  border: 2px solid lightgray;
 }
 
 aside h2{
