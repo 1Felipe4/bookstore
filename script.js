@@ -16,7 +16,16 @@ function generate(){
     section.style.border = "3px solid black";
     section.style.padding = "2%";
     section.style.marginTop = "5%";
+
+
+
     section.style.backgroundColor = "#F9E4B7";
+    bookCover = book.getAttribute("cover");
+    if(bookCover == null){
+      bookCover = "";
+    }
+
+
     console.log(book);
     // section.style.backgroundImage = "url(sectionBG.png)";
     // section.style.backgroundSize = "contain";
@@ -32,6 +41,7 @@ function generate(){
 
     }
     title.setAttribute("name", "" +title.innerText);
+
     var bookCategory = book.getAttribute("category");
     var category = document.createElement("p");
     category.innerText += "Category: " + bookCategory;
@@ -100,6 +110,11 @@ function generate(){
     var selectLi = select.getElementsByTagName("li");
     for (var i = 0; i < selectLi.length; i++) {
       selectLi[i].style.display = "inline-block";
+    }
+
+    if(bookCover.toLowerCase() == "paperback"){
+      section.style.backgroundColor = "whitesmoke";
+      title.innerText += " (" + bookCover +  ")"
     }
 
 
