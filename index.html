@@ -49,8 +49,10 @@
       </bookstore>
     </xml>
 
+    <header>
 
-    <main  id="content">
+    </header>
+    <main  id="content" onchange="generateAside()">
 
 
     </main>
@@ -58,12 +60,15 @@
     <aside >
 
       <h2>Phill's Book Store</h2>
-      
+
       <section id="calculate">
 
       </section>
-      <section>
-          <button type="button" name="button" onclick="generateAside()"> Calculate</button>
+      <section id="category">
+        <label for="dropdown">Categories</label>
+        <select class="" id="dropdown" onchange="displayCategory()">
+          <option value="all">all</option>
+        </select>
       </section>
 
     </aside>

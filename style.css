@@ -1,27 +1,33 @@
 
+
+header{
+ background-color: chocolate;
+}
+
 body{
   background-image: url(webBG.jpg);
   background-size: contain;
 }
 main{
   float: left;
-  width: 60%;
+  width: 50%;
 }
 
 aside{
   position: fixed;
-  left: 70%;
+  left: 65%;
   width: 25%;
+  background-color: chocolate;
+  padding: 1%;
 
 }
+
+
 
 aside *{
 
   padding: 0;
-  margin-top: 5%;
   width: 100%;
-  background-color: #F9E4B7;
-
 }
 
 aside table *{
@@ -29,12 +35,15 @@ aside table *{
 }
 
 aside h2{
-  width: 98%;
+
+  margin: 1%;
+  margin-left: 0;
   border: 2px solid lightgray;
 }
 
-aside button{
-  margin-top: 0;
+aside section{
+border: 2px solid lightgray;
+margin-bottom: 1%;
 }
 
 xml{

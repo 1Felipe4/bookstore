@@ -19,6 +19,7 @@ function generate(){
 
 
 
+
     section.style.backgroundColor = "tan";
     bookCover = book.getAttribute("cover");
     if(bookCover == null){
@@ -26,7 +27,6 @@ function generate(){
     }
 
 
-    console.log(book);
     // section.style.backgroundImage = "url(sectionBG.png)";
     // section.style.backgroundSize = "contain";
 
@@ -41,10 +41,14 @@ function generate(){
 
     }
     title.setAttribute("name", "" +title.innerText);
+    section.setAttribute("name", title.innerText);
+
+
 
     var bookCategory = book.getAttribute("category");
     var category = document.createElement("p");
     category.innerText += "Category: " + bookCategory;
+    section.setAttribute("class", "Book " + bookCategory);
 
     var authors =  document.createElement("p");
     var bookAuthors = book.getElementsByTagName("author");
@@ -124,12 +128,13 @@ function generate(){
     section.appendChild(year);
     section.appendChild(price);
     section.appendChild(select);
-
+    console.log(section);
     document.getElementById("content").appendChild(section);
 
   }
 
   generateAside();
+  dropdown();
 }
 
 
@@ -246,6 +251,35 @@ for (var i = 0; i < selected.length; i++) {
 
 }
 
+function dropdown() {
+var categories = ["all"];
+for (var j = 0; j < books.length; j++) {
+  var book = books[j];
+  var b = true;
+  for (var i = 0; i < categories.length; i++) {
+    if(categories[i] == book.getAttribute("category")){
+      b = false;
+    }
+  }
+
+  if (b == true){
+    categories.push(book.getAttribute("category"));
+  }
+}
+
+var select = document.getElementById("dropdown");
+select.innerHTML = "";
+
+for (var i = 0; i < categories.length; i++) {
+  var opt = document.createElement("option");
+  opt.innerText = categories[i];
+  select.appendChild(opt);
+
+}
+
+console.log(categories);
+}
+
 function getSelected(){
   var inputs = document.getElementsByTagName("input");
   var selected = [];
@@ -258,5 +292,27 @@ function getSelected(){
 
 
 return selected;
+
+}
+
+function displayCategory(){
+  var sections = document.getElementsByClassName("Book");
+  var select = document.getElementById("dropdown");
+  var category = select.value;
+  var booksInCategory = document.getElementsByClassName(category);
+  console.log(booksInCategory);
+
+if (category != "all") {
+  for (var i = 0; i < sections.length; i++) {
+    sections[i].style.display = "none";
+  }
+  for (var i = 0; i < booksInCategory.length; i++) {
+    booksInCategory[i].style.display = "block";
+  }
+}else {
+  for (var i = 0; i < sections.length; i++) {
+    sections[i].style.display = "block";
+  }
+}
 
 }
