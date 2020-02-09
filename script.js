@@ -153,7 +153,10 @@ for (var i = 0; i < selected.length; i++) {
   var table = document.createElement("table");
   table.style.borderCollapse ="collapse";
   table.style.border = "3px solid gray";
+
+
   var hRow = document.createElement("tr");
+  hRow.style.fontSize = "1.4em";
   var bookHead = document.createElement("th");
   bookHead.innerText ="Book";
   bookHead.style.border = "1px solid lightgray";
@@ -177,7 +180,7 @@ for (var i = 0; i < selected.length; i++) {
 
   if(selected.length == 0){
     var noneRow = document.createElement("tr");
-
+    noneRow.style.fontSize = "1.3em";
     var noneData = document.createElement("td");
     noneData.innerText ="None";
     noneRow.appendChild(noneData);
@@ -200,6 +203,7 @@ for (var i = 0; i < selected.length; i++) {
 
   for (var i = 0; i < uls.length; i++) {
     let row = document.createElement("tr");
+    row.style.fontSize = "1.3em";
     let node = uls[i].childNodes[1];
     let selInput = selected[i];
 
@@ -227,7 +231,7 @@ for (var i = 0; i < selected.length; i++) {
 
   var row = document.createElement("tr");
   row.style.border = "2px solid lightgray";
-
+  row.style.fontSize = "1.3em";
   var total = document.createElement("th");
   total.innerText = "Total";
   row.appendChild(total);
@@ -268,6 +272,7 @@ for (var j = 0; j < books.length; j++) {
 }
 
 var select = document.getElementById("dropdown");
+select.style.fontSize = "1.2em";
 select.innerHTML = "";
 
 for (var i = 0; i < categories.length; i++) {
