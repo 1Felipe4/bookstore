@@ -41,6 +41,13 @@ aside h2{
   border: 2px solid lightgray;
 }
 
+aside h3{
+
+  margin: 1%;
+  margin-left: 0;
+}
+
+
 aside section{
 border: 2px solid lightgray;
 margin-bottom: 1%;
